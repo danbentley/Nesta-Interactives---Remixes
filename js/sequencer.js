@@ -88,6 +88,7 @@ define(['jquery'], function() {
 		playAudioForRow: function(row) {
 			var index = this.getIndexForRow(row) - 1;
 			var audio = $('audio');
+			audio[index].currentTime = 0;
 			audio[index].play();
 		},
 
