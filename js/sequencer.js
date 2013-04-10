@@ -27,13 +27,14 @@ define(['jquery'], function() {
 		init: function() {
 			this.grid = this.getGrid();
 			this.buildGrid();
-			this.start();
+			this.play();
 			this.embedSounds();
 			this.addListeners();
 			this.drawSpaceInvader();
 		},
 		interval: null,
-		BPM: 1,
+		playling: true,
+		DELAY: 200,
 
 		addListeners: function() {
 			$('span.selectable').on('click ', $.proxy(function(e) { 
@@ -47,8 +48,15 @@ define(['jquery'], function() {
 				e.preventDefault();
 			}, this));
 
-			$('a.pause').on('click', $.proxy(function(e) {
-				this.pause();
+			$('a.play').on('click', $.proxy(function(e) {
+
+				$('a.play').addClass('paused');
+				if (this.playing) {
+					this.pause();
+				} else {
+					this.play();
+				}
+
 				e.preventDefault();
 			}, this));
 		},
@@ -133,7 +141,7 @@ define(['jquery'], function() {
 			}, this));
 		},
 
-		start: function() {
+		play: function() {
 			this.interval = setInterval($.proxy(function() {
 				this.resetActiveRow();
 				this.updateActiveRow();
@@ -145,7 +153,8 @@ define(['jquery'], function() {
 				if (this.currentRow > this.grid.dimensions.x) {
 					this.currentRow = 1;
 				}
-			}, this), 100);
+			}, this), this.DELAY);
+			this.playing = true;
 		},
 
 		selectCell: function($cell) {
@@ -161,6 +170,7 @@ define(['jquery'], function() {
 
 		pause: function() {
 			clearInterval(this.interval);
+			this.playing = false;
 		}
 	}
 });

@@ -3,10 +3,24 @@
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8">
 	</head>
 	<body>
-		<div id="grid"></div>
-		<a href="#" class="pause">Pause</a>
+		<div class="interactive-wrapper">
+			
+			<div id="grid" class="timeline interactive"></div>
+			
+			<div class="instructions">
+				<h2>Information</h2>
+				<div>
+					<p>Place squares on the musical timeline using your mouse to create some funky beats!</p>
+					<p>Try placing different squares on the different rows of colour to build up your track.</p>
+					
+					<ul class="buttons">
+						<li><a href="#" class="play"><span>Pause<span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
 		<div class="type"></div>
-		<script data-main="js/main.js" src="js/require-jquery.js"></script>
 		<script data-main="js/main.js" src="/sites/all/themes/nesta/js/require-jquery.js"></script>
 	</body>
 </html>
