@@ -30,7 +30,9 @@ define(['jquery'], function() {
 		init: function() {
 			this.grid = this.getGrid();
 			this.buildGrid();
-			this.play();
+			if (this.isAudioSupported()) {
+				this.play();
+			}
 			this.embedSounds();
 			this.addListeners();
 		},
@@ -117,6 +119,10 @@ define(['jquery'], function() {
 		canPlayOgg: function() {
 			var a = document.createElement('audio');
 			return !!(a.canPlayType && a.canPlayType('audio/ogg').replace(/no/, ''));
+		},
+
+		isAudioSupported: function() {
+			return (this.canPlayM4a() || this.canPlayOgg());
 		},
 
 		buildGrid: function() {
