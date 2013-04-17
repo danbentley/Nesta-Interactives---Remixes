@@ -63,6 +63,57 @@ body {
 }
 
 
+/* CONTROL BUTTONS */
+.buttons {
+	list-style: none;
+	margin:0 0 1.5em;
+	padding:0;
+	font-family: 'MuseoSlab500', Helvetica, Sans-serif;
+}
+
+.buttons a {
+	border: 1px #ece8e3 solid;
+	display: block;
+	margin-top:10px;
+	padding-left:49px;
+	color: #666;
+	text-decoration:none;
+	border-radius:3px;
+}
+.buttons a span {
+	display: block;
+	background: #fff;
+	padding:15px 10px;
+	width: auto;
+	height: auto;
+	float: none;
+		
+	-moz-transition: all .2s ease-in-out;
+	-webkit-transition: width .2s ease-in-out;
+	-o-transition: width .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+.buttons a:hover span {
+	background:#f4f0ed;
+}
+.buttons a.play {
+	background: #6ac071 url('../images/controls.png') no-repeat 15px 50%;
+}
+.buttons a.pause {
+	background: #57cbf5 url('../images/controls.png') no-repeat 15px 0;
+}
+
+.buttons a.disabled {
+	opacity: 0.5;
+	cursor: default;
+	background-color: #ece8e3;
+	color: #d1cdc2;
+}
+.buttons a.disabled:hover span {
+	background-color: #fff;
+}
+
+
 
 /* INTERACTIVE-SPECIFIC STYLES */
 
@@ -130,50 +181,7 @@ span span {
 .col-0.row-7 { background: url('../images/row-6-cap.png') no-repeat 0 50%; }
 .col-0.row-8 { background: url('../images/row-7-cap.png') no-repeat 0 50%; }
 
-/* CONTROL BUTTONS */
-.buttons {
-	list-style: none;
-	margin:0;
-	padding:0;
-}
-.buttons a {
-	border: 1px #ece8e3 solid;
-	display: block;
-	margin-top:10px;
-	padding-left:49px;
-	color: #666;
-	text-decoration:none;
-	border-radius:3px;
-}
-.buttons a span {
-	display: block;
-	background: #fff;
-	padding:15px 10px;
-	-moz-transition: all .2s ease-in-out;
-	-webkit-transition: width .2s ease-in-out;
-	-o-transition: width .2s ease-in-out;
-	transition: all .2s ease-in-out;
-}
-.buttons a:hover span {
-	background:#f4f0ed;
-}
-.buttons a.record {
-	background: #f17169 url('../images/controls.png') no-repeat 15px 0;
-}
-.buttons a.play {
-	background: #6ac071 url('../images/controls.png') no-repeat 15px 50%;
-}
-.buttons a.reset {
-	background: #57cbf5 url('../images/controls.png') no-repeat 15px 100%;
-}
 
-.buttons a.disabled {
-	opacity: 0.5;
-	cursor: default;
-	background-color: #ece8e3;
-	color: #d1cdc2;
-}
-.buttons a.disabled:hover span {
-	background-color: #fff;
-}
+
+
 

@@ -48,9 +48,9 @@ define(['jquery'], function() {
 				e.preventDefault();
 			}, this));
 
-			$('a.play').on('click', $.proxy(function(e) {
+			$('#play').on('click', $.proxy(function(e) {
 
-				$('a.play').addClass('paused');
+				$('#play').toggleClass('pause').toggleClass('play');
 				if (this.playing) {
 					this.pause();
 				} else {
@@ -88,7 +88,7 @@ define(['jquery'], function() {
 		playAudioForRow: function(row) {
 			var index = this.getIndexForRow(row) - 1;
 			var audio = $('audio');
-			audio[index].currentTime = 0;
+			//audio[index].currentTime = 0;
 			audio[index].play();
 		},
 
@@ -143,6 +143,7 @@ define(['jquery'], function() {
 		},
 
 		play: function() {
+			$('#play').html('<span>Pause</span>');
 			this.interval = setInterval($.proxy(function() {
 				this.resetActiveRow();
 				this.updateActiveRow();
@@ -170,6 +171,7 @@ define(['jquery'], function() {
 		},
 
 		pause: function() {
+			$('#play').html('<span>Play</span>');
 			clearInterval(this.interval);
 			this.playing = false;
 		}
