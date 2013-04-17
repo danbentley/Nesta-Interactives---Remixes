@@ -1,4 +1,4 @@
-define(['jquery'], function() {
+define([], function() {
 
 	return {
 		currentRow: 1,
@@ -26,6 +26,9 @@ define(['jquery'], function() {
 		],
 		grid: null,
 		$grid: $('#grid'),
+		interval: null,
+		playling: true,
+		DELAY: 200,
 
 		init: function() {
 			this.grid = this.getGrid();
@@ -36,9 +39,6 @@ define(['jquery'], function() {
 			this.embedSounds();
 			this.addListeners();
 		},
-		interval: null,
-		playling: true,
-		DELAY: 200,
 
 		addListeners: function() {
 			$('span.selectable').on('click ', $.proxy(function(e) { 
@@ -162,6 +162,17 @@ define(['jquery'], function() {
 			this.currentRows.addClass('active');
 		},
 
+		selectCell: function($cell) {
+
+			if ($cell.find('span').length === 0) {
+				$cell.append('<span />');
+			} else {
+				$cell.empty();
+			}
+
+			$cell.toggleClass('selected');
+		},
+
 		play: function() {
 			$('#play').html('<span>Pause</span>');
 			this.interval = setInterval($.proxy(function() {
@@ -177,17 +188,6 @@ define(['jquery'], function() {
 				}
 			}, this), this.DELAY);
 			this.playing = true;
-		},
-
-		selectCell: function($cell) {
-
-			if ($cell.find('span').length === 0) {
-				$cell.append('<span />');
-			} else {
-				$cell.empty();
-			}
-
-			$cell.toggleClass('selected');
 		},
 
 		pause: function() {
