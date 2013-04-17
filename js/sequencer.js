@@ -7,19 +7,22 @@ define(['jquery'], function() {
 			'claves',
 			'closedhihat',
 			'cowbell-lo',
-			'cowbell',
 			'crashcymbal1',
 			'handclap',
 			'highq',
-			'hightom1',
-		//	'hightom2',
-		//	'kickdrum1',
+			'midtom1',
+			'snaredrum1'
+
+			// Unfortunately, we don't have room for all the sounds. 
+			// keep them around incase we even want to change the samples
+			//'cowbell',
+			//'hightom1',
+			//'hightom2',
+			//'kickdrum1',
 			//'kickdrum2',
 			//'lowtom1',
-			//'midtom1',
 			//'midtom2',
 			//'openhihat',
-			//'snaredrum1'
 		],
 		grid: null,
 		$grid: $('#grid'),
@@ -95,6 +98,27 @@ define(['jquery'], function() {
 			return parseInt(row.id.match(/grid-\d+-(\d+)/)[1]);
 		},
 
+		getExtension: function() {
+
+			if (this.canPlayM4a()) {
+				return 'm4a';
+			}
+
+			if (this.canPlayOgg()) {
+				return 'ogg';
+			}
+		},
+
+		canPlayM4a: function() {
+			var a = document.createElement('audio');
+			return !!(a.canPlayType && a.canPlayType('audio/mp4').replace(/no/, ''));
+		},
+		
+		canPlayOgg: function() {
+			var a = document.createElement('audio');
+			return !!(a.canPlayType && a.canPlayType('audio/ogg').replace(/no/, ''));
+		},
+
 		buildGrid: function() {
 			var markup = '';
 			for (var y = 0; y < this.grid.dimensions.y; y++) {
@@ -114,10 +138,11 @@ define(['jquery'], function() {
 		},
 
 		embedSounds: function() {
-			$.each(this.sounds, function(index, sound) {
-				var audio = $('<audio />').attr('src', 'sounds/' + sound + '.m4a').addClass(sound);
+			$.each(this.sounds, $.proxy(function(index, sound) {
+				var extension = this.getExtension();
+				var audio = $('<audio />').attr('src', 'sounds/' + extension + '/' + sound + '.' + extension).addClass(sound);
 				$('body').append(audio);
-			});
+			}, this));
 		},
 
 		resetActiveRow: function() {
