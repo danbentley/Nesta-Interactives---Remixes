@@ -33,9 +33,11 @@ define([], function() {
 		init: function() {
 			this.grid = this.getGrid();
 			this.buildGrid();
-			if (this.isAudioSupported()) {
-				this.play();
+			if (!this.isAudioSupported()) {
+				$('.message, .message-overlay').show();
+				return;
 			}
+			this.play();
 			this.embedSounds();
 			this.addListeners();
 		},

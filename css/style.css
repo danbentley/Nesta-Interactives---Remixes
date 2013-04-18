@@ -116,7 +116,6 @@ body {
 
 
 /* INTERACTIVE-SPECIFIC STYLES */
-
 .interactive {
 	background: #f4f0ed;
 	padding: 0;
@@ -124,6 +123,7 @@ body {
 	width: 697px;
 	float: left;
 	border-right: 1px #d1cdc2 solid;
+	position: relative;
 }
 
 span {
@@ -172,6 +172,15 @@ span span {
 .row-4.selected span, .row-8.selected span { background: #6ac071; }
 .row-4.selected.active span, .row-8.selected.active span { background: #bdcab3; }
 
+.col-5, .col-10, .col-15, .col-20, .col-25, .col-30, .col-35, .col-40,
+.col-5:hover, .col-10:hover, .col-15:hover, .col-20:hover, .col-25:hover, .col-30:hover, .col-35:hover, .col-40:hover {
+	background-color:#eae2dc;
+}
+
+.col-5.active, .col-10.active, .col-15.active, .col-20.active, .col-25.active, .col-30.active, .col-35.active, .col-40.active {
+	background-color:#dad3cb;
+}
+
 .col-0.row-1 { background: url('../images/row-0-cap.png') no-repeat 0 50%; }
 .col-0.row-2 { background: url('../images/row-1-cap.png') no-repeat 0 50%; }
 .col-0.row-3 { background: url('../images/row-2-cap.png') no-repeat 0 50%; }
@@ -182,6 +191,50 @@ span span {
 .col-0.row-8 { background: url('../images/row-7-cap.png') no-repeat 0 50%; }
 
 
+/* MESSAGE */
+.message-overlay {
+	background-color:#f4f0ed;
+	width:100%;
+	height:100%;
+	z-index: 10;
+	position: absolute;
+	opacity: 0.65;
+	display: none;
+}
+.message {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 20;
+	background: #fff;
+	border: 1px #d1cdc2 solid;
+	box-shadow: 0 0 5px #d1cdc2;
+	color: #656565;
+	margin: -75px 0 0 -197px;
+	height: 110px;
+	width: 400px;
+	padding: 20px 0;
+	text-align: center;
+	display: none;
+}
 
+.message h3 {
+	margin: 1em 0 0.15em;
+	font: normal 1.625em 'MuseoSlab500', Helvetica, Sans-serif
+}
+
+.message p {
+	margin: 0 0 1.5em;
+	font: normal 0.95em/1.5 'MuseoSlab500', Helvetica, Sans-serif;
+}
+
+.message p strong {
+	color: #f2675e;
+	font-weight: normal;
+}
+
+.complete .message {
+	display: block;
+}
 
 
