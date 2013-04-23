@@ -97,10 +97,10 @@ body {
 	background:#f4f0ed;
 }
 .buttons a.play {
-	background: #6ac071 url('../images/controls.png') no-repeat 15px 50%;
+	background: #6ac071 url('../img/controls.png') no-repeat 15px 50%;
 }
 .buttons a.pause {
-	background: #57cbf5 url('../images/controls.png') no-repeat 15px 0;
+	background: #57cbf5 url('../img/controls.png') no-repeat 15px 0;
 }
 
 .buttons a.disabled {
@@ -127,7 +127,7 @@ body {
 }
 
 span {
-	background: url('../images/track-thread.png') repeat-x 0 50%;
+	background: url('../img/track-thread.png') repeat-x 0 50%;
 	width: 15px;
 	height: 21px;
 	float: left;
@@ -140,7 +140,7 @@ span.col-0 {
 }
 
 span:hover {
-	background: url('../images/add-indicator.png') no-repeat 50% 50%;
+	background: url('../img/add-indicator.png') no-repeat 50% 50%;
 }
 
 .active, span.active:hover {
@@ -181,19 +181,19 @@ span span {
 	background-color:#dad3cb;
 }
 
-.col-0.row-1 { background: url('../images/row-0-cap.png') no-repeat 0 50%; }
-.col-0.row-2 { background: url('../images/row-1-cap.png') no-repeat 0 50%; }
-.col-0.row-3 { background: url('../images/row-2-cap.png') no-repeat 0 50%; }
-.col-0.row-4 { background: url('../images/row-3-cap.png') no-repeat 0 50%; }
-.col-0.row-5 { background: url('../images/row-4-cap.png') no-repeat 0 50%; }
-.col-0.row-6 { background: url('../images/row-5-cap.png') no-repeat 0 50%; }
-.col-0.row-7 { background: url('../images/row-6-cap.png') no-repeat 0 50%; }
-.col-0.row-8 { background: url('../images/row-7-cap.png') no-repeat 0 50%; }
+.col-0.row-1 { background: url('../img/row-0-cap.png') no-repeat 0 50%; }
+.col-0.row-2 { background: url('../img/row-1-cap.png') no-repeat 0 50%; }
+.col-0.row-3 { background: url('../img/row-2-cap.png') no-repeat 0 50%; }
+.col-0.row-4 { background: url('../img/row-3-cap.png') no-repeat 0 50%; }
+.col-0.row-5 { background: url('../img/row-4-cap.png') no-repeat 0 50%; }
+.col-0.row-6 { background: url('../img/row-5-cap.png') no-repeat 0 50%; }
+.col-0.row-7 { background: url('../img/row-6-cap.png') no-repeat 0 50%; }
+.col-0.row-8 { background: url('../img/row-7-cap.png') no-repeat 0 50%; }
 
 
 /* MESSAGE */
 .message-overlay {
-	background:#f4f0ed url('../images/disabled-bg.png') no-repeat 0 0;
+	background:#f4f0ed url('../img/disabled-bg.png') no-repeat 0 0;
 	background-color:#f4f0ed;
 	width:100%;
 	height:100%;
