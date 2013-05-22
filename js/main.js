@@ -1,6 +1,7 @@
 require.config({
 	paths: {
 		jquery: 'lib/jquery.min',
+		sequencer: 'src/sequencer'
 	}
 });
 
