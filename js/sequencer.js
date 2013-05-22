@@ -1,4 +1,4 @@
-define([], function() {
+define(['jquery'], function($) {
 
 	return {
 		currentRow: 1,
